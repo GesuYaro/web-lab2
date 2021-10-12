@@ -22,10 +22,13 @@
   </tr>
   <tr>
     <td>
-      <canvas id="areas" width="400" height="400">
-        <img id="areas_picture" src="areas.svg" alt="areas picture">
+      <canvas id="areas" width="800" height="800">
+        <img id="areas_picture" src="newAreas.svg" alt="areas picture">
       </canvas>
-      <form id="main_form" method="post" action="${pageContext.request.contextPath}/controller" onsubmit="return handleForm()">
+<%--      раньше форма была здесь--%>
+    </td>
+    <td>
+      <form id="main_form" method="post" onsubmit="return handleForm()">
         <div class="input-container">
           X :
           <label>
@@ -82,8 +85,6 @@
         <br>
         <button type="submit" name="submit">Проверить</button>
       </form>
-    </td>
-    <td>
       <table id="response_table">
         <thead>
           <td>Результат</td>

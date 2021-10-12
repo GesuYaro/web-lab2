@@ -14,12 +14,13 @@ function drawPicture() {
 function drawDot(x, y, result) {
     let canvas = document.getElementById("areas");
     let ctx = canvas.getContext("2d");
-    let radius = 5;
+    let radius = 3;
     let size = canvas.width;
+    let factor = 0.1;
 
-    x = x * size * 0.4 + 0.5 * size - radius * 0.5;
+    x = x * size * factor + 0.5 * size - radius * 0.5;
     y = - y;
-    y = y * size * 0.4 + 0.5 * size - radius * 0.5;
+    y = y * size * factor + 0.5 * size - radius * 0.5;
 
     if (result) {
         ctx.fillStyle = 'rgba(0,255,13,0.77)'
@@ -45,7 +46,6 @@ function drawAllDots() {
         let x = fields.eq(1).text();
         let y = fields.eq(2).text();
         let r = fields.eq(3).text();
-        str += `x: ${x}, y: ${y}, r: ${r}\n`
         x /= r;
         x = x.toFixed(2);
         y /= r;

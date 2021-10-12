@@ -6,10 +6,11 @@ $(document).ready(function () {
 
         let canvas = document.getElementById("areas");
         let size = canvas.width;
-        let radius = 5;
+        let radius = 3;
+        let factor = 0.1;
 
-        x = (x - 0.5 * size + radius * 0.5) / (size * 0.4);
-        y = (y - 0.5 * size + radius * 0.5) / (size * 0.4);
+        x = (x - 0.5 * size + radius * 0.5) / (size * factor);
+        y = (y - 0.5 * size + radius * 0.5) / (size * factor);
         y = - y;
         let r = getText('r').eq(0).val();
         x = (x * r).toFixed(5);

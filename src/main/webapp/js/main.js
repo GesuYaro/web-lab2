@@ -1,5 +1,8 @@
 function handleForm() {
-    return validateForm();
+    if(validateForm()) {
+        request();
+    }
+    return false;
 }
 
 function request() {
@@ -14,7 +17,7 @@ function request() {
 
 function sendRequest(x, y, r) {
     $.ajax({
-        url: "http://localhost:8080/weebo-1.0-SNAPSHOT/controller",
+        url: "./controller",
         type: "POST",
         data: {'x': x, 'y': y, 'r': r},
         success: function(response){
